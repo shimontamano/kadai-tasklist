@@ -1,12 +1,14 @@
 <% if logged_in? %>
 
 <% @tasks.each do |task| %>
-<li><%= task.content %></li>
-<% end %>
+<li><%= task.content %>
 
+
+<%= link_to '詳細表示', task_path(task) %>
+<%= link_to '編集', edit_task_path(task) %>
+</li>
   
-  
-  
+<% end %>  
   
 <% else %>
   <div class="center jumbotron">
